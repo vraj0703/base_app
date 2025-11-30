@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_base/flutter_ui_base.dart';
+import 'package:flutter_ui_base/common_libs.dart';
 import 'package:go_router/go_router.dart';
 
 /// Custom GoRoute sub-class to make the router declaration easier to read

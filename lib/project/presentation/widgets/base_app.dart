@@ -1,25 +1,21 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_core/core/models/boot_load.dart';
+import 'package:flutter_ui_base/common_libs.dart';
 
 //import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_ui_base/domain/logic/app_shortcuts.dart';
-import 'package:flutter_ui_base/flutter_ui_base.dart';
-import 'package:flutter_ui_base/presentation/widgets/app_scroll_behavior.dart';
 import 'package:my_localizations/l10n/app_localizations.dart';
 import 'package:base_app/project/data/dependencies/logger.dart';
 import 'package:base_app/project/data/models/context_collects.dart';
 import 'package:base_app/project/data/routes/router.dart';
 import 'package:base_app/project/presentation/states/blocs/app_bloc.dart';
-import 'package:sized_context/sized_context.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-class TemplateApp extends StatelessWidget {
+class BaseApp extends StatelessWidget {
   final String initialRoute;
   final BootLoad? initialLoad;
   final dynamic initialInput;
 
-  const TemplateApp({
+  const BaseApp({
     super.key,
     required this.initialRoute,
     this.initialLoad,
@@ -75,7 +71,7 @@ class TemplateApp extends StatelessWidget {
                   routerDelegate: appRouter.routerDelegate,
                   shortcuts: AppShortcuts.defaults,
                   theme: $styles.themeData(),
-                  color: $styles.colors.black,
+                  color: $colors.black,
                   localizationsDelegates: const [
                     AppLocalizations.delegate,
                     GlobalMaterialLocalizations.delegate,
@@ -97,7 +93,7 @@ class TemplateApp extends StatelessWidget {
 class _App extends StatefulWidget {
   final Widget child;
 
-  _App({required this.child});
+  const _App({required this.child});
 
   @override
   State<_App> createState() => _AppState();

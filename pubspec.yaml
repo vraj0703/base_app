@@ -100,3 +100,6 @@ flutter:
     androidX: true
     androidPackage: raj.base.app
     iosBundleIdentifier: raj.base.app
+
+  assets:
+    - assets/jsons/

@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-import 'project/presentation/widgets/template_app.dart';
+import 'project/presentation/widgets/base_app.dart';
 
 @InjectableInit()
 Future<void> configureDependencies(String flavor) async =>
@@ -18,5 +18,5 @@ void main() async {
     //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   }
 
-  runApp(TemplateApp(initialLoad: null, initialRoute: "", initialInput: null));
+  runApp(BaseApp(initialLoad: null, initialRoute: "", initialInput: null));
 }

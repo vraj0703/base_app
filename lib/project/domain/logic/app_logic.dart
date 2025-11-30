@@ -1,19 +1,20 @@
-import 'dart:async';
 import 'dart:ui';
+import 'package:flutter_ui_base/flutter_ui_base.dart';
+import 'package:my_localizations/l10n/app_localizations.dart';
+import 'package:my_localizations/library.dart';
 
 import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_ui_base/common_libs.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_theme_style/my_theme_style.dart';
 import 'package:base_app/project/data/dependencies/app_theme.dart';
 import 'package:base_app/project/data/dependencies/assets.dart';
-import 'package:base_app/project/data/dependencies/global_variable.dart';
 import 'package:base_app/project/data/models/context_collects.dart';
 import 'package:base_app/project/data/routes/handle_redirect.dart';
 import 'package:base_app/project/data/routes/router.dart';
+import 'package:base_app/project/data/dependencies/global_variable.dart';
 
 import '../../data/dependencies/logger.dart';
 
@@ -47,19 +48,15 @@ class AppLogic {
     // Set min-sizes for desktop apps
     // TODO: Test on Linux and confirm whether it's safe to call there, according to issue #183 its not.
     if (!kIsWeb && (PlatformInfo.isWindows || PlatformInfo.isMacOS)) {
-      await DesktopWindow.setMinWindowSize($styles.sizes.minAppSize);
+      await DesktopWindow.setMinWindowSize($sizes.minAppSize);
     }
 
     if (kIsWeb) {
       // SB: This is intentionally not a debugPrint, as it's a message for users who open the console on web.
-      print(
-        '''Thanks for checking out Wonderous on the web!
-        If you encounter any issues please report them at https://github.com/gskinnerTeam/flutter-wonderous-app/issues.''',
-      );
+      logger.d('''Thanks for checking out on the web!''');
       // Required on web to automatically enable accessibility features
       WidgetsFlutterBinding.ensureInitialized().ensureSemantics();
     }
-
     // Load any bitmaps the views might need
     await AppBitmaps.init();
 
@@ -69,12 +66,23 @@ class AppLogic {
     }
 
     // Localizations
-    //await parseJsonFromPath('assets/style_config/colors.json')
-    //await localeLogic.initialize(saveLocale: (locale){}, );
+    await localeLogic.initialize(
+      saveLocale: (locale) {},
+      allowedLocale: AppLocalizations.supportedLocales
+          .map(
+            (e) => LanguageModel(
+              code: e.languageCode,
+              country: e.countryCode ?? '',
+              displayName: e.languageCode,
+            ),
+          )
+          .toList(),
+    );
 
     // Load theme
-    await loadAppTheme(collects);
+    await loadAppTheme(collects, localeLogic.strings.localeName);
 
+    // initialize base ui elements with localizations and theme
     await FlutterUiBase.initialize(
       style: MyThemeStyle.appStyle,
       localizations: GetIt.I<MyLocalizations>().strings,
@@ -100,9 +108,9 @@ class AppLogic {
     Widget child, {
     bool transparent = false,
   }) async {
-    return await Navigator.of(context).push<T>(
-      PageRoutes.dialog<T>(child, duration: $styles.times.pageTransition),
-    );
+    return await Navigator.of(
+      context,
+    ).push<T>(PageRoutes.dialog<T>(child, duration: $durations.pageTransition));
   }
 
   /// Called from the UI layer once a MediaQuery has been obtained

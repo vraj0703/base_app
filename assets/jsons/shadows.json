@@ -1,0 +1,52 @@
+{
+  "elevation": {
+    "level0": {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": "#000000",
+      "opacity": 0
+    },
+    "level1": {
+      "x": 0,
+      "y": 1,
+      "blur": 2,
+      "spread": 0,
+      "color": "#000000",
+      "opacity": 0.3
+    },
+    "level2": {
+      "x": 0,
+      "y": 2,
+      "blur": 6,
+      "spread": 2,
+      "color": "#000000",
+      "opacity": 0.15
+    },
+    "level3": {
+      "x": 0,
+      "y": 4,
+      "blur": 8,
+      "spread": 3,
+      "color": "#000000",
+      "opacity": 0.15
+    },
+    "level4": {
+      "x": 0,
+      "y": 6,
+      "blur": 10,
+      "spread": 4,
+      "color": "#000000",
+      "opacity": 0.15
+    },
+    "level5": {
+      "x": 0,
+      "y": 8,
+      "blur": 12,
+      "spread": 6,
+      "color": "#000000",
+      "opacity": 0.15
+    }
+  }
+}

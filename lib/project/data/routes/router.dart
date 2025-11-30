@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_base/flutter_ui_base.dart';
+import 'package:flutter_ui_base/common_libs.dart';
 import 'package:flutter_ui_base/presentation/base_pages/page_not_found.dart';
-import 'package:go_router/go_router.dart';
 import 'package:base_app/project/data/dependencies/assets.dart';
 import 'app_route.dart';
 import 'handle_redirect.dart';
