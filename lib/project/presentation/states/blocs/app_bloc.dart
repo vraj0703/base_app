@@ -8,8 +8,8 @@ import 'package:base_app/project/data/dependencies/global_variable.dart';
 import 'package:base_app/project/data/dependencies/register_singletons.dart';
 import 'package:base_app/project/data/models/context_collects.dart';
 import 'package:base_app/project/domain/entities/app_entity.dart';
+import 'package:my_logger_metrics/logger.dart';
 
-import '../../../data/dependencies/logger.dart';
 
 part 'app_event.dart';
 
@@ -31,9 +31,9 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       registerSingletons();
       emit(AppState.injectWithContext());
     } on Exception catch (e) {
-      logger.e("$e");
+      $logger.e("$e");
       emit(const AppState.error());
-      logger.d("emit state error");
+      $logger.d("emit state error");
     }
   }
 
@@ -47,10 +47,10 @@ class AppBloc extends Bloc<AppEvent, AppState> {
 
   Future<BootLoad> getBootLoad() async {
     try {
-      logger.d("getting boot load...");
+      $logger.d("getting boot load...");
       return BootLoad.sample();
     } on Exception catch (e) {
-      logger.e("error while fetching boot load from native :: $e");
+      $logger.e("error while fetching boot load from native :: $e");
       rethrow;
     }
   }

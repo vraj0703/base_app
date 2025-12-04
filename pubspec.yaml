@@ -44,6 +44,9 @@ dependencies:
   flutter_ui_base:
     git:
       url: https://github.com/vraj0703/flutter_ui_base.git
+  my_logger_metrics:
+    git:
+      url: https://github.com/vraj0703/my_logger_metrics.git
 
   # public packages
   get_it: ^9.1.0

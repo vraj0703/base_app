@@ -68,8 +68,13 @@
   "base": {
     "white": "#FFFFFF",
     "black": "#000000",
+    "blue": "#A9A9A9",
+    "red": "#A9A9A9",
+    "orange": "#A9A9A9",
+    "green": "#A9A9A9",
     "offWhite": "#FAF9F6",
     "greyDark": "#A9A9A9",
+    "greyLight": "#A9A9A9",
     "transparent": "#00000000"
   },
   "custom": {

@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:my_logger_metrics/logger.dart';
 import 'package:my_theme_style/my_theme_style.dart';
 import 'package:base_app/project/data/models/context_collects.dart';
-
-import 'logger.dart';
 
 Future<void> loadAppTheme(ContextCollects collects, String localeName) async {
   await MyThemeStyle.initialize(
@@ -25,10 +24,10 @@ Future<void> loadAppTheme(ContextCollects collects, String localeName) async {
 
 Future<Map<String, dynamic>> parseJsonFromPath(String path) async {
   try {
-    logger.d("parsing json from path $path");
+    $logger.d("parsing json from path $path");
     return json.decode(await rootBundle.loadString("assets/jsons/$path"));
   } on Exception {
-    logger.e("failed to parse the json from path $path");
+    $logger.e("failed to parse the json from path $path");
     return {};
   }
 }

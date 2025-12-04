@@ -4,11 +4,11 @@ import 'package:flutter_ui_base/common_libs.dart';
 
 //import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:my_localizations/l10n/app_localizations.dart';
-import 'package:base_app/project/data/dependencies/logger.dart';
 import 'package:base_app/project/data/models/context_collects.dart';
 import 'package:base_app/project/data/routes/router.dart';
 import 'package:base_app/project/presentation/states/blocs/app_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:my_logger_metrics/logger.dart';
 
 class BaseApp extends StatelessWidget {
   final String initialRoute;
@@ -26,10 +26,10 @@ class BaseApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        logger.d("initialising app bloc...");
+        $logger.d("initialising app bloc...");
         var bloc = AppBloc();
         bloc.add(AppEvent.configure(initialLoad));
-        logger.d("added event 'Configure'");
+        $logger.d("added event 'Configure'");
         return bloc;
       },
       child: BlocConsumer<AppBloc, AppState>(

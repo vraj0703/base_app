@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_ui_base/common_libs.dart';
 import 'package:get_it/get_it.dart';
+import 'package:my_logger_metrics/logger.dart';
 import 'package:my_theme_style/my_theme_style.dart';
 import 'package:base_app/project/data/dependencies/app_theme.dart';
 import 'package:base_app/project/data/dependencies/assets.dart';
@@ -15,8 +16,6 @@ import 'package:base_app/project/data/models/context_collects.dart';
 import 'package:base_app/project/data/routes/handle_redirect.dart';
 import 'package:base_app/project/data/routes/router.dart';
 import 'package:base_app/project/data/dependencies/global_variable.dart';
-
-import '../../data/dependencies/logger.dart';
 
 class AppLogic {
   Size _appSize = Size.zero;
@@ -53,7 +52,7 @@ class AppLogic {
 
     if (kIsWeb) {
       // SB: This is intentionally not a debugPrint, as it's a message for users who open the console on web.
-      logger.d('''Thanks for checking out on the web!''');
+      $logger.d('''Thanks for checking out on the web!''');
       // Required on web to automatically enable accessibility features
       WidgetsFlutterBinding.ensureInitialized().ensureSemantics();
     }
@@ -98,6 +97,7 @@ class AppLogic {
     bool showIntro = true;
     if (showIntro) {
       appRouter.go(ScreenPaths.intro);
+      // ignore: dead_code
     } else {
       appRouter.go(initialDeeplink ?? ScreenPaths.home);
     }
@@ -158,7 +158,7 @@ class AppLogic {
         AssetImage(url),
         context,
         onError: (error, stackTrace) {
-          logger.e('Loading $url failed - ${error.toString()}');
+          $logger.e('Loading $url failed - ${error.toString()}');
         },
       ),
     );

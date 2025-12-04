@@ -3,6 +3,14 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  desktop_window
+  flutter_core
+  flutter_localization
+  flutter_ui_base
+  my_localizations
+  my_logger_metrics
+  my_theme_style
+  url_launcher_linux
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

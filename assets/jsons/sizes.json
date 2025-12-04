@@ -3,12 +3,17 @@
     "sm": 18.0,
     "md": 24.0,
     "lg": 32.0,
-    "xl": 48.0
+    "xl": 64.0
   },
   "border": {
     "sm": 1.0,
     "md": 2.0,
     "lg": 4.0
+  },
+  "radius": {
+    "sm": 4,
+    "md": 8,
+    "lg": 16
   },
   "maxContent": {
     "width1": 800.0,
@@ -18,5 +23,8 @@
   "minAppSize": {
     "width": 380.0,
     "height": 650.0
+  },
+  "snackbar": {
+    "height": 60
   }
 }
