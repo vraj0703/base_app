@@ -41,6 +41,9 @@ dependencies:
   my_localizations:
     git:
       url: https://github.com/vraj0703/my_localizations.git
+  my_graphs:
+    git:
+      url: https://github.com/vraj0703/my_graphs.git
   flutter_ui_base:
     git:
       url: https://github.com/vraj0703/flutter_ui_base.git
