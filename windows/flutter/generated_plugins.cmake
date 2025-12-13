@@ -12,6 +12,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   my_logger_metrics
   my_theme_style
   permission_handler_windows
+  speech_to_text_windows
   url_launcher_windows
 )
 

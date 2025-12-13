@@ -1,0 +1,3 @@
+# enums
+
+Domain-specific enumerations.
