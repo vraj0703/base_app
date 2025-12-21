@@ -10,6 +10,7 @@
 #include <flutter_core/flutter_core_plugin.h>
 #include <flutter_localization/flutter_localization_plugin.h>
 #include <flutter_ui_base/flutter_ui_base_plugin.h>
+#include <my_graphs/my_graphs_plugin.h>
 #include <my_localizations/my_localizations_plugin.h>
 #include <my_logger_metrics/my_logger_metrics_plugin.h>
 #include <my_theme_style/my_theme_style_plugin.h>
@@ -28,6 +29,9 @@ void fl_register_plugins(FlPluginRegistry* registry) {
   g_autoptr(FlPluginRegistrar) flutter_ui_base_registrar =
       fl_plugin_registry_get_registrar_for_plugin(registry, "FlutterUiBasePlugin");
   flutter_ui_base_plugin_register_with_registrar(flutter_ui_base_registrar);
+  g_autoptr(FlPluginRegistrar) my_graphs_registrar =
+      fl_plugin_registry_get_registrar_for_plugin(registry, "MyGraphsPlugin");
+  my_graphs_plugin_register_with_registrar(my_graphs_registrar);
   g_autoptr(FlPluginRegistrar) my_localizations_registrar =
       fl_plugin_registry_get_registrar_for_plugin(registry, "MyLocalizationsPlugin");
   my_localizations_plugin_register_with_registrar(my_localizations_registrar);

@@ -9,8 +9,11 @@ import 'package:my_logger_metrics/my_logger_metrics.dart';
 import 'flavor.dart';
 import 'project/presentation/widgets/base_app.dart';
 
+import 'main.config.dart';
+
 @InjectableInit()
-Future<void> configureDependencies(String flavor) async => GetIt.instance;
+Future<void> configureDependencies(String flavor) async =>
+    GetIt.instance.init(environment: flavor);
 
 void main() async {
   var config = AppConfig(flavor: flavor, aptabaseAppKey: null);

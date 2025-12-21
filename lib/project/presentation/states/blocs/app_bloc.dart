@@ -9,7 +9,8 @@ import 'package:base_app/project/data/dependencies/register_singletons.dart';
 import 'package:base_app/project/data/models/context_collects.dart';
 import 'package:base_app/project/domain/entities/app_entity.dart';
 import 'package:my_logger_metrics/logger.dart';
-
+import 'package:base_app/main.dart';
+import 'package:base_app/flavor.dart';
 
 part 'app_event.dart';
 
@@ -28,6 +29,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     try {
       var bootLoad = event.initialLoad ?? await getBootLoad();
       GetIt.I.registerSingleton<BootLoad>(bootLoad);
+      await configureDependencies(flavor.name);
       registerSingletons();
       emit(AppState.injectWithContext());
     } on Exception catch (e) {

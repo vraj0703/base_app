@@ -11,6 +11,7 @@ import device_info_plus
 import flutter_core
 import flutter_localization
 import flutter_ui_base
+import my_graphs
 import my_localizations
 import my_logger_metrics
 import my_theme_style
@@ -28,6 +29,7 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   FlutterCorePlugin.register(with: registry.registrar(forPlugin: "FlutterCorePlugin"))
   FlutterLocalizationPlugin.register(with: registry.registrar(forPlugin: "FlutterLocalizationPlugin"))
   FlutterUiBasePlugin.register(with: registry.registrar(forPlugin: "FlutterUiBasePlugin"))
+  MyGraphsPlugin.register(with: registry.registrar(forPlugin: "MyGraphsPlugin"))
   MyLocalizationsPlugin.register(with: registry.registrar(forPlugin: "MyLocalizationsPlugin"))
   MyLoggerMetricsPlugin.register(with: registry.registrar(forPlugin: "MyLoggerMetricsPlugin"))
   MyThemeStylePlugin.register(with: registry.registrar(forPlugin: "MyThemeStylePlugin"))

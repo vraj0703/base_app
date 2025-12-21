@@ -32,24 +32,19 @@ dependencies:
     sdk: flutter
 
   # base packages
+  # base packages
   flutter_core:
-    git:
-      url: https://github.com/vraj0703/flutter_core.git
+    path: ../flutter_core
   my_theme_style:
-    git:
-      url: https://github.com/vraj0703/my_theme_style.git
+    path: ../my_theme_style
   my_localizations:
-    git:
-      url: https://github.com/vraj0703/my_localizations.git
+    path: ../my_localizations
   my_graphs:
-    git:
-      url: https://github.com/vraj0703/my_graphs.git
+    path: ../my_graphs
   flutter_ui_base:
-    git:
-      url: https://github.com/vraj0703/flutter_ui_base.git
+    path: ../flutter_ui_base
   my_logger_metrics:
-    git:
-      url: https://github.com/vraj0703/my_logger_metrics.git
+    path: ../my_logger_metrics
 
   # public packages
   get_it: ^9.1.0
@@ -73,6 +68,7 @@ dependencies:
   intl: ^0.20.2
   desktop_window: ^0.4.2
   flutter_displaymode: ^0.7.0
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
@@ -89,6 +85,7 @@ dev_dependencies:
   injectable_generator: ^2.9.1
   bloc_test: ^10.0.0
   mocktail: ^1.0.4
+  json_serializable: ^6.11.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

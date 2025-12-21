@@ -61,6 +61,11 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin home_widget, es.antonborri.home_widget.HomeWidgetPlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new com.example.my_graphs.MyGraphsPlugin());
+    } catch (Exception e) {
+      Log.e(TAG, "Error registering plugin my_graphs, com.example.my_graphs.MyGraphsPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new raj.localization.my_localizations.MyLocalizationsPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin my_localizations, raj.localization.my_localizations.MyLocalizationsPlugin", e);

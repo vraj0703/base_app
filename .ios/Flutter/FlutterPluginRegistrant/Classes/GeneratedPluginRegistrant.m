@@ -48,6 +48,12 @@
 @import home_widget;
 #endif
 
+#if __has_include(<my_graphs/MyGraphsPlugin.h>)
+#import <my_graphs/MyGraphsPlugin.h>
+#else
+@import my_graphs;
+#endif
+
 #if __has_include(<my_localizations/MyLocalizationsPlugin.h>)
 #import <my_localizations/MyLocalizationsPlugin.h>
 #else
@@ -124,6 +130,7 @@
   [FlutterLocalizationPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterLocalizationPlugin"]];
   [FlutterUiBasePlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterUiBasePlugin"]];
   [HomeWidgetPlugin registerWithRegistrar:[registry registrarForPlugin:@"HomeWidgetPlugin"]];
+  [MyGraphsPlugin registerWithRegistrar:[registry registrarForPlugin:@"MyGraphsPlugin"]];
   [MyLocalizationsPlugin registerWithRegistrar:[registry registrarForPlugin:@"MyLocalizationsPlugin"]];
   [MyLoggerMetricsPlugin registerWithRegistrar:[registry registrarForPlugin:@"MyLoggerMetricsPlugin"]];
   [MyThemeStylePlugin registerWithRegistrar:[registry registrarForPlugin:@"MyThemeStylePlugin"]];

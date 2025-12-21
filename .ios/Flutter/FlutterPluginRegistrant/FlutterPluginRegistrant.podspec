@@ -26,6 +26,7 @@ Depends on all your plugins, and provides a function to register them.
   s.dependency 'flutter_localization'
   s.dependency 'flutter_ui_base'
   s.dependency 'home_widget'
+  s.dependency 'my_graphs'
   s.dependency 'my_localizations'
   s.dependency 'my_logger_metrics'
   s.dependency 'my_theme_style'

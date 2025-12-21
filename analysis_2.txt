@@ -1,0 +1,17 @@
+Analyzing constellations_sky...                                 
+
+  error - Target of URI hasn't been generated: 'package:base_app/features/constellations_sky/data/models/star_chart_request_model.g.dart' - lib\features\constellations_sky\data\models\star_chart_request_model.dart:3:6 - uri_has_not_been_generated
+  error - The method '_$StarChartRequestModelToJson' isn't defined for the type 'StarChartRequestModel' - lib\features\constellations_sky\data\models\star_chart_request_model.dart:20:36 - undefined_method
+  error - The method '_$StarChartObserverToJson' isn't defined for the type 'StarChartObserver' - lib\features\constellations_sky\data\models\star_chart_request_model.dart:35:36 - undefined_method
+  error - The method '_$StarChartViewToJson' isn't defined for the type 'StarChartView' - lib\features\constellations_sky\data\models\star_chart_request_model.dart:45:36 - undefined_method
+  error - The method '_$StarChartParametersToJson' isn't defined for the type 'StarChartParameters' - lib\features\constellations_sky\data\models\star_chart_request_model.dart:54:36 - undefined_method
+  error - Target of URI hasn't been generated: 'package:base_app/features/constellations_sky/data/models/star_chart_response_model.g.dart' - lib\features\constellations_sky\data\models\star_chart_response_model.dart:3:6 - uri_has_not_been_generated
+  error - The method '_$StarChartResponseModelFromJson' isn't defined for the type 'StarChartResponseModel' - lib\features\constellations_sky\data\models\star_chart_response_model.dart:13:7 - undefined_method
+  error - The method '_$StarChartDataFromJson' isn't defined for the type 'StarChartData' - lib\features\constellations_sky\data\models\star_chart_response_model.dart:24:7 - undefined_method
+warning - Unused import: 'package:flutter_core/library.dart' - lib\features\constellations_sky\data\repositories\star_chart_repository_impl.dart:10:8 - unused_import
+   info - Parameter 'gqlClient' could be a super parameter - lib\features\constellations_sky\data\repositories\star_chart_repository_impl.dart:17:3 - use_super_parameters
+  error - Missing concrete implementations of 'getter mixin _$StarChartParams on Object.constellationId', 'getter mixin _$StarChartParams on Object.date', 'getter mixin _$StarChartParams on Object.latitude', 'getter mixin _$StarChartParams on Object.longitude', and 1 more - lib\features\constellations_sky\domain\entities\star_chart_params.dart:6:7 - non_abstract_class_inherits_abstract_member
+warning - Unused import: 'package:flutter_core/library.dart' - lib\features\constellations_sky\domain\repositories\star_chart_repository.dart:2:8 - unused_import
+warning - Unused import: 'package:flutter_core/library.dart' - lib\features\constellations_sky\domain\use_cases\generate_star_chart_use_case.dart:4:8 - unused_import
+   info - The imported package 'bloc' isn't a dependency of the importing package - lib\features\constellations_sky\presentation\states\constellations_cubit.dart:3:8 - depend_on_referenced_packages
+

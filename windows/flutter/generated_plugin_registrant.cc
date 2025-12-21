@@ -11,6 +11,7 @@
 #include <flutter_core/flutter_core_plugin_c_api.h>
 #include <flutter_localization/flutter_localization_plugin_c_api.h>
 #include <flutter_ui_base/flutter_ui_base_plugin_c_api.h>
+#include <my_graphs/my_graphs_plugin_c_api.h>
 #include <my_localizations/my_localizations_plugin_c_api.h>
 #include <my_logger_metrics/my_logger_metrics_plugin_c_api.h>
 #include <my_theme_style/my_theme_style_plugin_c_api.h>
@@ -29,6 +30,8 @@ void RegisterPlugins(flutter::PluginRegistry* registry) {
       registry->GetRegistrarForPlugin("FlutterLocalizationPluginCApi"));
   FlutterUiBasePluginCApiRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("FlutterUiBasePluginCApi"));
+  MyGraphsPluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("MyGraphsPluginCApi"));
   MyLocalizationsPluginCApiRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("MyLocalizationsPluginCApi"));
   MyLoggerMetricsPluginCApiRegisterWithRegistrar(
