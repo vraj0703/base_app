@@ -13,7 +13,6 @@ import 'package:my_theme_style/my_theme_style.dart';
 import 'package:base_app/project/data/dependencies/app_theme.dart';
 import 'package:base_app/project/data/dependencies/assets.dart';
 import 'package:base_app/project/data/models/context_collects.dart';
-import 'package:base_app/project/data/routes/handle_redirect.dart';
 import 'package:base_app/project/data/routes/router.dart';
 import 'package:base_app/project/data/dependencies/global_variable.dart';
 
@@ -94,13 +93,8 @@ class AppLogic {
     isBootstrapComplete = true;
 
     // Load initial view (replace empty initial view which is covered by a native splash screen)
-    bool showIntro = true;
-    if (showIntro) {
-      appRouter.go(ScreenPaths.intro);
-      // ignore: dead_code
-    } else {
-      appRouter.go(initialDeeplink ?? ScreenPaths.home);
-    }
+    // Load initial view
+    appRouter.go(ScreenPaths.splash);
   }
 
   Future<T?> showFullscreenDialogRoute<T>(

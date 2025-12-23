@@ -1,0 +1,24 @@
+Analyzing base_app...                                           
+
+warning - The declaration '_$StarChartResponseModelToJson' isn't referenced - lib\features\constellations_sky\data\models\star_chart_response_model.g.dart:17:22 - unused_element
+warning - The declaration '_$StarChartDataToJson' isn't referenced - lib\features\constellations_sky\data\models\star_chart_response_model.g.dart:24:22 - unused_element
+   info - Parameter 'gqlClient' could be a super parameter - lib\features\constellations_sky\data\repositories\star_chart_repository_impl.dart:17:3 - use_super_parameters
+warning - Unused import: 'package:flutter_core/library.dart' - lib\features\constellations_sky\domain\repositories\star_chart_repository.dart:2:8 - unused_import
+warning - Unused import: 'package:flutter_core/library.dart' - lib\features\constellations_sky\domain\use_cases\generate_star_chart_use_case.dart:4:8 - unused_import
+   info - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre - lib\features\constellations_sky\presentation\pages\constellations_page.dart:125:17 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\features\constellations_sky\presentation\pages\constellations_page.dart:168:23 - use_build_context_synchronously
+   info - The imported package 'bloc' isn't a dependency of the importing package - lib\features\constellations_sky\presentation\states\constellations_cubit.dart:3:8 - depend_on_referenced_packages
+   info - 'HasGameRef' is deprecated and shouldn't be used. Use HasGameReference instead. This mixin will be removed in a future version of Flame - lib\features\landing\presentation\game\components\parallax_bg.dart:4:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\landing\presentation\game\components\parallax_bg.dart:19:44 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\landing\presentation\game\components\parallax_bg.dart:27:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\landing\presentation\widgets\hero_overlay.dart:53:37 - deprecated_member_use
+   info - The import of 'package:flutter/material.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter_ui_base/common_libs.dart' - lib\project\data\routes\app_route.dart:2:8 - unnecessary_import
+   info - The import of 'package:go_router/go_router.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter_ui_base/common_libs.dart' - lib\project\data\routes\app_route.dart:4:8 - unnecessary_import
+   info - Unnecessary use of multiple underscores - lib\project\data\routes\router.dart:45:51 - unnecessary_underscores
+   info - The import of 'package:my_localizations/l10n/app_localizations.dart' is unnecessary because all of the used elements are also provided by the import of 'package:my_localizations/library.dart' - lib\project\domain\logic\app_logic.dart:3:8 - unnecessary_import
+   info - Function literals shouldn't be passed to 'forEach' - lib\project\domain\logic\app_logic.dart:150:10 - avoid_function_literals_in_foreach_calls
+   info - The import of 'package:flutter_core/core/models/boot_load.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter_ui_base/common_libs.dart' - lib\project\presentation\widgets\base_app.dart:2:8 - unnecessary_import
+   info - The imported package 'flutter_localizations' isn't a dependency of the importing package - lib\project\presentation\widgets\base_app.dart:10:8 - depend_on_referenced_packages
+   info - Don't invoke 'print' in production code - test\features\constellations_sky\data\repositories\star_chart_request_verification_test.dart:25:5 - avoid_print
+   info - Don't invoke 'print' in production code - test\features\constellations_sky\data\repositories\star_chart_request_verification_test.dart:26:5 - avoid_print
+

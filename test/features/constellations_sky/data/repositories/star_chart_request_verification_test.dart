@@ -17,12 +17,6 @@ void main() {
           constellation: 'ori',
           width: 1000,
           height: 1000,
-          constellationlines: true,
-          constellationlimits: false,
-          constellationnames: false,
-          starnames: false,
-          gridlines: false,
-          milkyway: false,
         ),
       ),
     );

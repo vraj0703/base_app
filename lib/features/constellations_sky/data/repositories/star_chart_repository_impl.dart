@@ -42,13 +42,6 @@ class StarChartRepositoryImpl extends BaseRepository
           constellation: params.constellationId,
           width: 2160,
           height: 2160,
-          // "Mimic Reference" settings (Clean Style)
-          constellationlines: true,
-          constellationlimits: false,
-          constellationnames: false,
-          starnames: false,
-          gridlines: false,
-          milkyway: false,
         ),
       ),
     );

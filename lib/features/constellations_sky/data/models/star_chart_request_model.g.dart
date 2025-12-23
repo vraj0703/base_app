@@ -57,12 +57,6 @@ StarChartParameters _$StarChartParametersFromJson(Map<String, dynamic> json) =>
       constellation: json['constellation'] as String,
       width: (json['width'] as num?)?.toInt(),
       height: (json['height'] as num?)?.toInt(),
-      constellationlines: json['constellation_lines'] as bool?,
-      constellationlimits: json['constellation_limits'] as bool?,
-      constellationnames: json['constellation_names'] as bool?,
-      starnames: json['star_names'] as bool?,
-      gridlines: json['grid_lines'] as bool?,
-      milkyway: json['milky_way'] as bool?,
     );
 
 Map<String, dynamic> _$StarChartParametersToJson(
@@ -71,10 +65,4 @@ Map<String, dynamic> _$StarChartParametersToJson(
   'constellation': instance.constellation,
   'width': ?instance.width,
   'height': ?instance.height,
-  'constellation_lines': ?instance.constellationlines,
-  'constellation_limits': ?instance.constellationlimits,
-  'constellation_names': ?instance.constellationnames,
-  'star_names': ?instance.starnames,
-  'grid_lines': ?instance.gridlines,
-  'milky_way': ?instance.milkyway,
 };

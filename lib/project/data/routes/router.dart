@@ -1,16 +1,16 @@
 import 'package:flutter_ui_base/common_libs.dart';
 import 'package:flutter_ui_base/presentation/base_pages/page_not_found.dart';
 import 'package:base_app/project/data/dependencies/assets.dart';
-import 'app_route.dart';
 import 'handle_redirect.dart';
-import 'package:base_app/features/constellations_sky/presentation/pages/constellations_page.dart';
+import 'package:base_app/features/landing/presentation/pages/landing_page_view.dart';
+import 'package:base_app/features/portfolio/presentation/pages/portfolio_page.dart';
+import 'package:base_app/features/portfolio/presentation/pages/project_detail_page.dart';
 
 /// Shared paths / urls used across the app
 class ScreenPaths {
   static String splash = '/';
-  static String intro = '/welcome';
   static String home = '/home';
-  static String constellations = '/constellations';
+  static String portfolio = '/portfolio';
 
   /// Dynamically nested pages, always added on to the existing path
   static String video(String id) => _appendToCurrentPath('/video/$id');
@@ -35,25 +35,44 @@ final appRouter = GoRouter(
     child: PageNotFound(
       state.uri.toString(),
       logoPath: ImagePaths.appLogoPlain,
-      onHomePressed: () {
-        context.go(ScreenPaths.home);
-      },
+      onHomePressed: () => context.go(ScreenPaths.home),
     ),
   ),
   routes: [
-    ShellRoute(
-      builder: (context, router, navigator) {
-        return navigator;
-      },
+    GoRoute(
+      path: ScreenPaths.splash,
+      builder: (context, state) => const LandingPageView(),
+    ),
+    GoRoute(path: ScreenPaths.home, redirect: (_, __) => ScreenPaths.splash),
+    GoRoute(
+      path: ScreenPaths.portfolio,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const PortfolioPage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return SlideTransition(
+            position:
+                Tween<Offset>(
+                  begin: const Offset(1.0, 0.0),
+                  end: Offset.zero,
+                ).animate(
+                  CurvedAnimation(
+                    parent: animation,
+                    curve: Curves.easeOutCubic,
+                  ),
+                ),
+            child: child,
+          );
+        },
+      ),
       routes: [
-        AppRoute(
-          ScreenPaths.splash,
-          (_) => Container(color: $styles.colors.greyDark),
+        GoRoute(
+          path: 'project/:id',
+          builder: (context, state) {
+            final id = state.pathParameters['id'] ?? '';
+            return ProjectDetailPage(projectId: id);
+          },
         ),
-        // This will be hidden
-        AppRoute(ScreenPaths.intro, (_) => ConstellationsPage()),
-        AppRoute(ScreenPaths.home, (_) => ConstellationsPage(), routes: []),
-        AppRoute(ScreenPaths.constellations, (_) => const ConstellationsPage()),
       ],
     ),
   ],

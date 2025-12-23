@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-
-//import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+// ignore: depend_on_referenced_packages
 import 'package:my_logger_metrics/my_logger_metrics.dart';
+// ignore: unused_import
+import 'package:my_localizations/my_localizations.dart';
 
 import 'flavor.dart';
 import 'project/presentation/widgets/base_app.dart';
@@ -16,16 +16,17 @@ Future<void> configureDependencies(String flavor) async =>
     GetIt.instance.init(environment: flavor);
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Logger
   var config = AppConfig(flavor: flavor, aptabaseAppKey: null);
   MyLoggerMetrics.init(config: config);
 
-  // ignore: unused_local_variable
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // Initialize DI
+  await configureDependencies(flavor.name);
 
-  /// Keep native splash screen up until app is finished bootstrapping
-  if (!kIsWeb) {
-    //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  }
+  // Initialize Localizations (if needed, or just pass delegate to BaseApp)
+  // BaseApp usually handles the delegates, but we ensure MyLocalizations is ready.
 
-  runApp(BaseApp(initialLoad: null, initialRoute: "", initialInput: null));
+  runApp(BaseApp(initialLoad: null, initialRoute: "/", initialInput: null));
 }
