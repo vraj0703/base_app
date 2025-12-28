@@ -113,3 +113,4 @@ flutter:
 
   shaders:
     - assets/shaders/star_nest.frag
+    - assets/shaders/background_run_v2.frag
