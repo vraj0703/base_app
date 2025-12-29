@@ -5,10 +5,12 @@
 import FlutterMacOS
 import Foundation
 
+import audioplayers_darwin
 import connectivity_plus
 import desktop_window
 import device_info_plus
 import flutter_core
+import flutter_gl_macos
 import flutter_localization
 import flutter_ui_base
 import my_graphs
@@ -23,10 +25,12 @@ import url_launcher_macos
 import webview_flutter_wkwebview
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
+  AudioplayersDarwinPlugin.register(with: registry.registrar(forPlugin: "AudioplayersDarwinPlugin"))
   ConnectivityPlusPlugin.register(with: registry.registrar(forPlugin: "ConnectivityPlusPlugin"))
   DesktopWindowPlugin.register(with: registry.registrar(forPlugin: "DesktopWindowPlugin"))
   DeviceInfoPlusMacosPlugin.register(with: registry.registrar(forPlugin: "DeviceInfoPlusMacosPlugin"))
   FlutterCorePlugin.register(with: registry.registrar(forPlugin: "FlutterCorePlugin"))
+  FlutterGlMacosPlugin.register(with: registry.registrar(forPlugin: "FlutterGlMacosPlugin"))
   FlutterLocalizationPlugin.register(with: registry.registrar(forPlugin: "FlutterLocalizationPlugin"))
   FlutterUiBasePlugin.register(with: registry.registrar(forPlugin: "FlutterUiBasePlugin"))
   MyGraphsPlugin.register(with: registry.registrar(forPlugin: "MyGraphsPlugin"))

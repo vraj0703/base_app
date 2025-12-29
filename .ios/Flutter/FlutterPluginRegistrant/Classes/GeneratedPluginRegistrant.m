@@ -6,6 +6,12 @@
 
 #import "GeneratedPluginRegistrant.h"
 
+#if __has_include(<audioplayers_darwin/AudioplayersDarwinPlugin.h>)
+#import <audioplayers_darwin/AudioplayersDarwinPlugin.h>
+#else
+@import audioplayers_darwin;
+#endif
+
 #if __has_include(<camera_avfoundation/CameraPlugin.h>)
 #import <camera_avfoundation/CameraPlugin.h>
 #else
@@ -28,6 +34,12 @@
 #import <flutter_core/FlutterCorePlugin.h>
 #else
 @import flutter_core;
+#endif
+
+#if __has_include(<flutter_gl/FlutterGlPlugin.h>)
+#import <flutter_gl/FlutterGlPlugin.h>
+#else
+@import flutter_gl;
 #endif
 
 #if __has_include(<flutter_localization/FlutterLocalizationPlugin.h>)
@@ -123,10 +135,12 @@
 @implementation GeneratedPluginRegistrant
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
+  [AudioplayersDarwinPlugin registerWithRegistrar:[registry registrarForPlugin:@"AudioplayersDarwinPlugin"]];
   [CameraPlugin registerWithRegistrar:[registry registrarForPlugin:@"CameraPlugin"]];
   [ConnectivityPlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"ConnectivityPlusPlugin"]];
   [FPPDeviceInfoPlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"FPPDeviceInfoPlusPlugin"]];
   [FlutterCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterCorePlugin"]];
+  [FlutterGlPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterGlPlugin"]];
   [FlutterLocalizationPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterLocalizationPlugin"]];
   [FlutterUiBasePlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterUiBasePlugin"]];
   [HomeWidgetPlugin registerWithRegistrar:[registry registrarForPlugin:@"HomeWidgetPlugin"]];

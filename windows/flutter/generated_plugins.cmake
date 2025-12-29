@@ -3,9 +3,11 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  audioplayers_windows
   connectivity_plus
   desktop_window
   flutter_core
+  flutter_gl_windows
   flutter_localization
   flutter_ui_base
   my_graphs

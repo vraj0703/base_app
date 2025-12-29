@@ -19,10 +19,12 @@ Depends on all your plugins, and provides a function to register them.
   s.static_framework    = true
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.dependency 'Flutter'
+  s.dependency 'audioplayers_darwin'
   s.dependency 'camera_avfoundation'
   s.dependency 'connectivity_plus'
   s.dependency 'device_info_plus'
   s.dependency 'flutter_core'
+  s.dependency 'flutter_gl'
   s.dependency 'flutter_localization'
   s.dependency 'flutter_ui_base'
   s.dependency 'home_widget'

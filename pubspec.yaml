@@ -66,13 +66,17 @@ dependencies:
   flame: ^1.20.0
   graphql_flutter: ^5.2.1
   camera: ^0.11.3
-  image: ^4.5.4
+  image: ^4.7.2
   permission_handler: ^12.0.1
   intl: ^0.20.2
   desktop_window: ^0.4.2
   flutter_displaymode: ^0.7.0
   url_launcher: ^6.3.2
 
+dependency_overrides:
+  image: 4.7.2
+  http: ^1.6.0
+  archive: ^4.0.7
 
 dev_dependencies:
   flutter_test:
@@ -110,7 +114,9 @@ flutter:
 
   assets:
     - assets/jsons/
+    - assets/images/logo.png
 
   shaders:
     - assets/shaders/star_nest.frag
     - assets/shaders/background_run_v2.frag
+    - assets/shaders/logo.frag
